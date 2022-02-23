@@ -6,34 +6,37 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            // TODO Be sure to follow best practice when creating your classes
 
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
-
-
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
-
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
+            Bird b1 = new Bird();
+            b1.CanFly = true;
+            b1.BeakLength = 10.55;
+            //beak length in centimeters
+            b1.Migrates = true;
+            b1.WingColor = "blue";
 
 
+            Reptile r1 = new Reptile();
+            r1.CanGrowTail = true;
+            r1.SouthOfEquator = true;
+            r1.TailLength = 6;           
+            r1.TongueLength = 5.2;
+            //tongue length in centimeters && tail length in inches
+
+            // Creatively display the class member values
 
 
-            /*Create an object of your Bird class
-             *  give values to your members using the object of your Bird class
-             *  
-             * Creatively display the class member values 
-             */
+            var animals = new Animal[] { b1, r1 };
 
-            /*Create an object of your Reptile class
-             *  give values to your members using the object of your Reptile class
-             *  
-             * Creatively display the class member values 
-             */
+            foreach (var animal in animals)
+            {
+                Console.WriteLine($"Alive: {animal.IsAlive}");
+                Console.WriteLine($"Longevity in years: {animal.Longevity}");
+                Console.WriteLine($"Natural Habitat: {animal.Habitat}");
+                Console.WriteLine($"Leg Count: {animal.LegCount} legs");
+
+
+            }
+      
         }
     }
 }
